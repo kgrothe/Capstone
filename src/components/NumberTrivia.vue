@@ -40,10 +40,7 @@ export default {
  methods:{
    getTrivia:function(){
 
-   
-
- 
- 
+  
   let proxyUrl = 'https://cors-anywhere.herokuapp.com/'
   let targetUrl = 'http://numbersapi.com/random'
 

@@ -51,28 +51,17 @@ export default {
 methods :{
     findNumber: function () {
 
-let proxyUrl = 'https://cors-anywhere.herokuapp.com/'
-  let targetUrl = 'https://api.nasa.gov/planetary/apod?api_key=EMjuzVPgN7YuVVONc0GFmXcK518Zo9wRzQuC5ahb'
-
-  axios.get(proxyUrl + targetUrl)
-    .then(response => {
-      this.results = response.data;
-      console.log(response.data)
-    })
-    .catch(error => {
-      this.errors.push(error);
-    });
 
 
-  //  axios.get('https://api.nasa.gov/planetary/apod?api_key=EMjuzVPgN7YuVVONc0GFmXcK518Zo9wRzQuC5ahb')
- //   .then(response => {
-    //    this.results = response.data;
-    //    this.results.url = document.data.url;
-      //  console.log(response.data)
-   // })
-    //.catch(e => {
-      //  this.errors.push(e)
-    //})
+  axios.get('https://api.nasa.gov/planetary/apod?api_key=EMjuzVPgN7YuVVONc0GFmXcK518Zo9wRzQuC5ahb')
+   .then(response => {
+    this.results = response.data;
+    this.results.url = document.data.url;
+  console.log(response.data)
+ })
+.catch(e => {
+  this.errors.push(e)
+})
 }
 }
 }
