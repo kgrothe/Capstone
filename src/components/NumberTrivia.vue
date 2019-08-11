@@ -21,10 +21,13 @@
 
 <script>
 
+
+
 import axios from 'axios';
 
+
 export default {
-  name: 'NumberTrivia',
+  name: 'trigger',
   data () {
     return {
       errors: [],
@@ -33,19 +36,42 @@ export default {
 
   },
 
-methods: {
-  getTrivia: function() {
-  axios.get('http://numbersapi.com/random/trivia')
-  .then(response => {
-    this.results = response.data;
-    console.log(response.data)
-  })
-    .catch(e => {
-      this.errors.push(e)
+//created: function () {
+ methods:{
+   getTrivia:function(){
+
+   
+
+ 
+ 
+  let proxyUrl = 'https://cors-anywhere.herokuapp.com/'
+  let targetUrl = 'http://numbersapi.com/random'
+
+  axios.get(proxyUrl + targetUrl)
+    .then(response => {
+      this.results = response.data;
+      console.log(response.data)
     })
-  }
+    .catch(error => {
+      this.errors.push(error);
+    });
 }
+ }
+
+// methods: {
+  // getTrivia: function() {
+  // axios.get('http://numbersapi.com/random/trivia')
+  //.then(response => {
+  //  this.results = response.data;
+  //  console.log(response.data)
+  // })
+  //  .catch(e => {
+  //    this.errors.push(e)
+  //  })
+ // }
+ // }
 }
+
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
