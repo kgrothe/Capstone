@@ -2,7 +2,7 @@
   <div class="home">
     
    <p>
-      <router-link v-bind:to="{ name:'howmany' }">Start here</router-link>        
+      <router-link v-bind:to="{ name:'options' }">Start here</router-link>        
    </p>   
        
   </div>

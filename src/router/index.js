@@ -1,8 +1,10 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '@/components/Home'
+import Options from '@/components/Options'
 import HowMany from '@/components/HowMany'
 import NumberTrivia from '@/components/NumberTrivia'
+import APOD from '@/components/APOD'
 
 Vue.use(Router)
 
@@ -14,6 +16,11 @@ export default new Router({
         component: Home
       },
       {
+        path: '/options',
+        name: 'options',
+        component: Options
+      },
+      {
         path: '/howmany',
         name: 'howmany',
         component: HowMany
@@ -22,6 +29,11 @@ export default new Router({
         path: '/numbertrivia',
         name: 'numbertrivia',
         component: NumberTrivia
+      },
+      {
+        path: '/apod',
+        name: 'apod',
+        component: APOD
       }
     ]
 })

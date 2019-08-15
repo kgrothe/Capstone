@@ -3,26 +3,20 @@
      <p>
        <router-link v-bind:to="{ name:'numbertrivia' }"> {{ results.number }} </router-link>
        </p>
-      <h3> Astronomy Picture of the Day</h3>
-  
-    
+          
     
     <p>
     <router-link v-bind:to="{ name:'home' }">Home</router-link>    
   </p> 
     
      <form v-on:submit.prevent="findNumber">
-      <p><button type="submit">Show me NASA's Astronomy Picture of the day</button></p>
+      <p><button type="submit">How many people are in space today?</button></p>
     </form> 
 
 <p> {{ results.message }}</p>
 
-<!-- test image -->
+<p> {{ results.people }}</p>
 
-<span><img v-bind:src="results.url" /></span> 
- <h3> {{ results.title }} </h3>
- <h4> copyright: {{ results.copyright }} </h4>
- <h5> {{ results.explanation }} </h5>
 
  <p>
    <router-link v-bind:to="{ name: 'numbertrivia' }">Show me some number trivia</router-link>
@@ -32,38 +26,51 @@
 </template>
     
 <script>
-
 import axios from 'axios';
 
+
 export default {
-    name: 'trigger',
-    data () {
-        return {
-            
-            errors: [],
-            results: [
-              {              
-              url: null,             
-              }
-            ],
-        }
-},
-methods :{
-    findNumber: function () {
+  name: 'trigger',
+  data () {
+    return {
+      errors: [],
+      results: [],
+    }
+
+  },
+
+//created: function () {
+ methods:{
+   findNumber:function(){
+
+  
+  let proxyUrl = 'https://cors-anywhere.herokuapp.com/'
+  let targetUrl = 'http://api.open-notify.org/astros.json'
 
 
-
-  axios.get('https://api.nasa.gov/planetary/apod?api_key=EMjuzVPgN7YuVVONc0GFmXcK518Zo9wRzQuC5ahb')
-   .then(response => {
-    this.results = response.data;
-    this.results.url = document.data.url;
-  console.log(response.data)
- })
-.catch(e => {
-  this.errors.push(e)
-})
+  axios.get(proxyUrl + targetUrl)
+    .then(response => {
+      this.results = response.data;
+      console.log(response.data)
+    })
+    .catch(error => {
+      this.errors.push(error);
+    });
 }
-}
+ }
+
+// methods: {
+  // getTrivia: function() {
+  // axios.get('http://numbersapi.com/random/trivia')
+  //.then(response => {
+  //  this.results = response.data;
+  //  console.log(response.data)
+  // })
+  //  .catch(e => {
+  //    this.errors.push(e)
+  //  })
+ // }
+ // }
 }
 
 </script>
