@@ -1,14 +1,13 @@
 <template>
   <div class="home">
-    
-   <p>
-      <router-link v-bind:to="{ name:'options' }">Start here</router-link>        
-   </p>   
+
+  <p>
+    <router-link v-bind:to="{ name:'options' }">Start here</router-link>        
+  </p>   
        
   </div>
+
 </template>
-
-
 
 <!--
 <script>
@@ -39,6 +38,6 @@ li {
   margin: 0 10px;
 }
 a {
-  color: #42b983;
+  color: black;
 }
 </style>

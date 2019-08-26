@@ -1,27 +1,23 @@
 <template>
   <div class="howmany">
-     <p>
-       <router-link v-bind:to="{ name:'numbertrivia' }"> {{ results.number }} </router-link>
-       </p>
-          
-    
     <p>
-    <router-link v-bind:to="{ name:'home' }">Home</router-link>    
-  </p> 
+      <router-link v-bind:to="{ name:'numbertrivia' }"> {{ results.number }} </router-link>
+    </p>        
+    <p>
+      <router-link v-bind:to="{ name:'options' }">Home</router-link>    
+    </p> 
     
-     <form v-on:submit.prevent="findNumber">
-      <p><button type="submit">How many people are in space today?</button></p>
-    </form> 
+   <form v-on:submit.prevent="findNumber">
+     <p>How many people are in space today</p>
+    <p><button type="submit">?</button></p>
+   </form> 
 
-<p> {{ results.message }}</p>
+      
+  <h4>{{ results.people }}</h4>
+  
 
-<p> {{ results.people }}</p>
 
-
- <p>
-   <router-link v-bind:to="{ name: 'numbertrivia' }">Show me some number trivia</router-link>
-</p>
-    </div>
+</div>
     
 </template>
     
@@ -30,11 +26,21 @@ import axios from 'axios';
 
 
 export default {
-  name: 'trigger',
+  name: 'howmany',
   data () {
     return {
       errors: [],
-      results: [],
+      results: [
+        { 
+          people:
+
+          { 
+            name: ""
+          }
+        }
+      ],
+      
+      
     }
 
   },
@@ -52,7 +58,8 @@ export default {
     .then(response => {
       this.results = response.data;
       console.log(response.data)
-    })
+      console.log(response.data.people)
+          })
     .catch(error => {
       this.errors.push(error);
     });
@@ -84,7 +91,7 @@ export default {
 }
 
 .special {
-  color: blue;
+  color: black;
   font-size: .80;
 }
 
@@ -104,7 +111,7 @@ li {
   margin: 0 10px;
 }
 a {
-  color: #42b983;
+  color: black;
 }
 
 

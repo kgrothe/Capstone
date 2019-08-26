@@ -1,24 +1,18 @@
 <template>
-  <div class="options">
+  <div class="options-column">
 
-
-      <p><router-link v-bind:to="{ name: 'howmany' }">How many people are in space today?</router-link>
+      <p><router-link v-bind:to="{ name: 'howmany' }">Number of People in Space</router-link>
       </p>
      
       <p><router-link v-bind:to="{ name: 'numbertrivia' }"> Number Trivia</router-link>
       </p>    
 
-      <p><router-link v-bind:to="{ name: 'apod' }"> APOD </router-link>
+      <p><router-link v-bind:to="{ name: 'apod' }"> Astronomy Picture of the Day </router-link>
+      </p>
 
-       </p>
-
-  
-    
-    
-    <p>
-    <router-link v-bind:to="{ name:'home' }">Home</router-link>    
-  </p> 
-    
+      <p><router-link v-bind:to="{ name: 'images' }"> Space Images </router-link>
+      </p>
+     
   </div>
 
 </template>
@@ -29,12 +23,15 @@
 
 <style scoped>
 
-.howmany {
-  font-size: 1.4rem;
+.options-column {
+  font-size: 1.4rem; 
+  padding: 50px;
+  text-align: center;
+
 }
 
 .special {
-  color: blue;
+  color: black;
   font-size: .80;
 }
 
@@ -54,8 +51,11 @@ li {
   margin: 0 10px;
 }
 a {
-  color: #42b983;
+  color: black;  
+  text-decoration-line: none;
 }
+
+
 
 
 </style>

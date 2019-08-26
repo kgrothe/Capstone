@@ -1,19 +1,17 @@
 <template>
   <div class="numbertrivia">
+
+    <p><router-link v-bind:to="{ name:'options' }">Home</router-link>
+    </p>
+
     <h3>Number Trivia</h3>
-
-      <p>
-        <router-link v-bind:to="{ name:'numbertrivia' }"> X </router-link>
-      </p>
-      <p> {{ results }}</p>
-      <p>Enter new number for a new fact</p>
-      <p>
-      <router-link v-bind:to="{ name:'home' }">Home</router-link>
-      </p>
-
-      <form v-on:submit.prevent="getTrivia">
-      <p><button type="submit">Show me the trivia</button></p>
-      </form>
+     
+    <p> {{ results }}</p>
+ 
+    <form v-on:submit.prevent="getTrivia">
+      <p>Enter a number: <input type="number" v-model="number"> to display number fact.<br><br>
+      <button type="submit">Show me the trivia </button></p>
+    </form>
  
    
   </div>
@@ -21,17 +19,15 @@
 
 <script>
 
-
-
 import axios from 'axios';
 
-
 export default {
-  name: 'trigger',
+  name: 'numbertrivia',
   data () {
     return {
       errors: [],
-      results: ""
+      results: "",
+      number: ""
     }
 
   },
@@ -41,19 +37,35 @@ export default {
    getTrivia:function(){
 
   
-  let proxyUrl = 'https://cors-anywhere.herokuapp.com/'
-  let targetUrl = 'http://numbersapi.com/random'
+ let proxyUrl = 'https://cors-anywhere.herokuapp.com/'
+ let targetUrl = 'http://numbersapi.com/' 
 
-  axios.get(proxyUrl + targetUrl)
+//let targetUrl = 'http://numbersapi.com/',{
+ // params: {
+  //  number:this.number,
+  //},
+   //}
+
+axios.get(proxyUrl + targetUrl + this.number)
+  //axios.get(proxyUrl + targetUrl, {
+
+    //axios.get(proxyUrl + targetUrl)
+   // params: {
+     // query:this.number,
+    // random:this.number,
+ //   }
+ // })
+  
     .then(response => {
       this.results = response.data;
       console.log(response.data)
-    })
+      console.log(this.number)
+          })
     .catch(error => {
       this.errors.push(error);
     });
-}
- }
+//}
+ //}
 
 // methods: {
   // getTrivia: function() {
@@ -68,7 +80,8 @@ export default {
  // }
  // }
 }
-
+ }
+}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
@@ -90,13 +103,12 @@ li {
   margin: 0 10px;
 }
 a {
-  color: #42b983;
+  color: black;
 }
 
 router-link-active {
   background-color: green;
 
 }
-
 
 </style>
