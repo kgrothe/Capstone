@@ -12,15 +12,18 @@
 
 <script>
 
+
+
 export default {
   name: 'app',  
   }
 
+
 </script>
 
 <style>
-
 @import url('https://fonts.googleapis.com/css?family=Exo&display=swap');
+
 
 #app {
   font-family: 'Exo', sans-serif;
