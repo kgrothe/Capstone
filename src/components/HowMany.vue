@@ -13,10 +13,29 @@
    </form> 
 
       
-  <h4>{{ results.people }}</h4>
-  
+  <h4>{{ results }}</h4>
 
 
+
+<ul>  
+<li v-for="result in results">
+  {{ results[1].name }}
+  <br>
+  {{ results[3].name }}
+</li>
+
+</ul>  
+
+
+<ol>
+  <li v-for="name in results">{{ name }}>
+  </li>
+  </ol>
+
+<li>
+  <li v-for="(result, index) in results">
+    {{ index }} {{ item }}
+</li>
 </div>
     
 </template>
@@ -30,15 +49,16 @@ export default {
   data () {
     return {
       errors: [],
-      results: [
-        { 
-          people:
-
-          { 
-            name: ""
-          }
-        }
-      ],
+      results: ""
+    //  results: "",
+      // [
+     //   { 
+       //   people: 
+      //    { 
+      //      name: ""
+     //     }
+    //    }
+     // ],
       
       
     }
@@ -56,9 +76,11 @@ export default {
 
   axios.get(proxyUrl + targetUrl)
     .then(response => {
-      this.results = response.data;
+      this.results = response.data.people;
       console.log(response.data)
       console.log(response.data.people)
+     console.log(response.data.people[0].name)
+   console.log(response.data.people[1].name)
           })
     .catch(error => {
       this.errors.push(error);

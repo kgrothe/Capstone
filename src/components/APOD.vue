@@ -17,7 +17,7 @@
 
   <span><img v-bind:src="results.url" /></span> 
   <h3> {{ results.title }} </h3>
-  <h4> copyright: {{ results.copyright }} </h4>
+  <h4> {{ results.copyright }} </h4>
   <h5> {{ results.explanation }} </h5>
 
 </div>

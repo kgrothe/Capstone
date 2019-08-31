@@ -5,6 +5,7 @@
     </p>
 
     <h3>Number Trivia</h3>
+    
      
     <p> {{ results }}</p>
  

@@ -1,18 +1,34 @@
 <template>
-  <div class="options-column">
 
-      <p><router-link v-bind:to="{ name: 'howmany' }">Number of People in Space</router-link>
-      </p>
+<div class="options">
+  
+       
+      <button @click="$router.push('howmany')"><font-awesome-icon icon="user-astronaut" />
+      </button>
+      <router-link v-bind:to="{ name: 'howmany' }">Number of People in Space      
+      </router-link>     
+      <br>
+      
+      <button @click="$router.push('numbertrivia')"><font-awesome-icon icon="question-circle" />
+      </button>
+      <router-link v-bind:to="{ name: 'numbertrivia' }">Number Trivia
+      </router-link>      
+      <br>
+
+      <button @click="$router.push('apod')"><font-awesome-icon icon="satellite" />
+      </button>
+      <router-link v-bind:to="{ name: 'apod' }">Astronomy Picture of the Day    
+      </router-link>
+      <br>
+
+      <button @click="$router.push('images')"><font-awesome-icon icon="space-shuttle" />
+      </button>
+      <router-link v-bind:to="{ name: 'images' }"> Space Images       
+      </router-link>
+      
+      
      
-      <p><router-link v-bind:to="{ name: 'numbertrivia' }"> Number Trivia</router-link>
-      </p>    
-
-      <p><router-link v-bind:to="{ name: 'apod' }"> Astronomy Picture of the Day </router-link>
-      </p>
-
-      <p><router-link v-bind:to="{ name: 'images' }"> Space Images </router-link>
-      </p>
-     
+    
   </div>
 
 </template>
@@ -23,13 +39,53 @@
 
 <style scoped>
 
-.options-column {
+.options {
   font-size: 1.4rem; 
-  padding: 50px;
-  text-align: center;
+ /* padding-left: 30%; */
+  align-content: center;
+  text-align: left;
+ /* text-align: left;*/
+ margin: auto;
+ width: 35%;
 
 }
 
+/*options.container {
+  text-align: left;
+}
+*/
+button {   
+ /* border-width: .1em;
+  border-color: darkslategray;  
+  background-color: aliceblue;*/
+  border: none;
+  padding: .5em;
+  color: navy;  
+  font-size: 1em;
+  cursor: pointer;
+  margin-right: .5em;
+  background-color: white;
+}
+
+button:hover {
+  background-color: darkred;
+
+}
+
+/*.svg-inline--fa {
+  padding: .25em;
+}
+
+*/
+/*button {
+  width: 35%;
+  padding: .75em;
+  border-width:.1em;
+  border-radius: 25px;
+  border-color: black;  
+  font-size: .9em;
+}
+*/
 .special {
   color: black;
   font-size: .80;
@@ -51,11 +107,14 @@ li {
   margin: 0 10px;
 }
 a {
-  color: black;  
-  text-decoration-line: none;
+    color: navy;  
+    text-decoration: none;
+    font-weight: bold;    
+  }
+
+a:hover {
+  color: darkred;
+  font-weight: bolder;
 }
-
-
-
 
 </style>

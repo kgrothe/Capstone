@@ -49,7 +49,7 @@
 
 <ul>
   
-  <li v-for="result in results.slice(0,6)">
+  <li class="grid" v-for="result in results.slice(0,6)">
     
 
     <img v-bind:src="result.links[0].href" />
@@ -150,6 +150,15 @@ methods :{
 
 img {
   width: 400px;
+}
+
+.grid {
+  border-color: lightslategray;
+}
+ 
+.grid.img {
+  width: 20%;
+
 }
 
 h3 {

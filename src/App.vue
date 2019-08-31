@@ -1,8 +1,6 @@
 <template>
   <div id="app">
-    <!-- try background image -->
-
-    
+            
     <img alt="Earth from space" src="./assets/RoundEarth.png"> 
  
     <h1>Space & Numbers</h1>  
@@ -15,15 +13,18 @@
 <script>
 
 export default {
-  name: 'app',
+  name: 'app',  
   }
 
 </script>
 
 <style>
 
+@import url('https://fonts.googleapis.com/css?family=Exo&display=swap');
+
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: 'Exo', sans-serif;
+ /* font-family: 'Avenir', Helvetica, Arial, sans-serif; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
