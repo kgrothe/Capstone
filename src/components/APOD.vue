@@ -2,7 +2,7 @@
   <div class="apod">
 
     <p>
-    <router-link v-bind:to="{ name:'options' }">Home</router-link>    
+    <router-link v-bind:to="{ name:'options' }">More options</router-link>    
     </p> 
 
     <h3> Astronomy Picture of the Day</h3>
@@ -11,11 +11,7 @@
       <p><button type="submit">VIEW</button></p>
     </form> 
 
-    <p> {{ results.message }}</p>
-
-<!-- test image -->
-
-  <span><img v-bind:src="results.url" /></span> 
+  <div class="reults"><img v-bind:src="results.url" /></div> 
   <h3> {{ results.title }} </h3>
   <h4> {{ results.copyright }} </h4>
   <h5> {{ results.explanation }} </h5>
@@ -48,9 +44,6 @@ methods :{
    .then(response => {
     this.results = response.data;
     this.results.url = data.url;
-    //document data url? trying without "document"
-    //this.results.url = document.data.url;
-
     console.log(response.data)
     })
 .catch(e => {
@@ -70,9 +63,13 @@ methods :{
   font-size: 1.4rem;
 }
 
-.special {
+h4.special {
   color: black;
   font-size: .80;
+}
+
+span {
+  width: 
 }
 
 img {
@@ -82,14 +79,7 @@ img {
 h3 {
   margin: 40px 0 0;
 }
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
+
 a {
   color: black;
 }

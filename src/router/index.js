@@ -6,6 +6,7 @@ import HowMany from '@/components/HowMany'
 import NumberTrivia from '@/components/NumberTrivia'
 import APOD from '@/components/APOD'
 import Images from '@/components/Images'
+import About from '@/components/About'
 
 Vue.use(Router)
 
@@ -41,6 +42,10 @@ export default new Router({
         name: 'images',
         component: Images
       },
-      
+      {
+        path: '/about',
+        name: 'about',
+        component: About
+      },
     ]
 })

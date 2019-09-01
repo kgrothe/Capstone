@@ -4,15 +4,17 @@
   <p>
     <router-link v-bind:to="{ name:'options' }">Start here</router-link>        
   </p>   
-       
+      <div class="nav">
+        <li>
+        <router-link v-bind:to="{ name: 'about' }">About</router-link>
+        </li>
+      </div>
   </div>
 
 </template>
 
 <!--
 <script>
-
-
 
 </script>-->
 
@@ -21,17 +23,8 @@
 .home {
   font-size: 1.4rem;
 }
-
 h1 {
   font-weight: bold;
-}
-
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
 }
 li {
   display: inline-block;

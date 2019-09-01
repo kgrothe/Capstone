@@ -1,10 +1,10 @@
 <template>
-  <div id="app">
-            
-    <img alt="Earth from space" src="./assets/RoundEarth.png"> 
+  <div id="app">    
+               
+    <img src="./assets/RoundEarth.png" alt="Earth from space"> 
  
     <h1>Space & Numbers</h1>  
-
+    
     <router-view/>
 
   </div>
@@ -12,12 +12,9 @@
 
 <script>
 
-
-
 export default {
   name: 'app',  
   }
-
 
 </script>
 
@@ -26,8 +23,7 @@ export default {
 
 
 #app {
-  font-family: 'Exo', sans-serif;
- /* font-family: 'Avenir', Helvetica, Arial, sans-serif; */
+  font-family: 'Exo', sans-serif; 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -45,4 +41,12 @@ h1 {
   font-size: 2.5rem;
 }
 
+img {
+  size: 80%;
+}
+/*
+li {
+  display: inline-block;  
+}
+*/
 </style>

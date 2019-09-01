@@ -1,7 +1,6 @@
 <template>
 
-<div class="options">
-  
+<div class="options">  
        
       <button @click="$router.push('howmany')"><font-awesome-icon icon="user-astronaut" />
       </button>
@@ -21,20 +20,18 @@
       </router-link>
       <br>
 
-      <button @click="$router.push('images')"><font-awesome-icon icon="space-shuttle" />
+      <button @click="$router.push('images')"><font-awesome-icon icon="rocket" />
       </button>
       <router-link v-bind:to="{ name: 'images' }"> Space Images       
       </router-link>
       
-      
-     
-    
-  </div>
+      <div class="nav">        
+        <router-link v-bind:to="{ name: 'about' }">About</router-link> 
+      </div>
+               
+    </div>
 
 </template>
-    
-    
-
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 
@@ -42,9 +39,10 @@
 
 .options {
   font-size: 1.5rem; 
+  color: #151B54;
   align-content: center;
   text-align: left;
-  margin: 0% 30% 30%;
+  margin: 0% 35% 35%;
   width: 35%;
 }
 
@@ -54,7 +52,7 @@ button {
   background-color: aliceblue;*/
   border: none;
   padding: .5em;
-  color: navy;  
+  color: #151B54;
   font-size: 1em;
   cursor: pointer;
   margin-right: .5em;
@@ -63,26 +61,19 @@ button {
 
 button:hover {
   color: darkred;
-
+  background-color: lightblue;
 }
 
-/*.svg-inline--fa {
-  padding: .25em;
-}
+div.nav {
+  height: 3em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  }
 
-*/
-/*button {
-  width: 35%;
-  padding: .75em;
-  border-width:.1em;
-  border-radius: 25px;
-  border-color: black;  
-  font-size: .9em;
-}
-*/
-.special {
+a.nav {
   color: black;
-  font-size: .80;
+  font-size: 9em;  
 }
 
 img {
@@ -92,22 +83,18 @@ img {
 h3 {
   margin: 40px 0 0;
 }
-ul {
-  list-style-type: none;
-  padding: 0;
-}
+
 li {
   display: inline-block;
   margin: 0 10px;
 }
 a {
-    color: navy;  
-    text-decoration: none;
-    font-weight: bold;    
-  }
-
+  color: black;
+ 
+}
 a:hover {
   color: darkred;
+  background-color: lightblue;
   font-weight: bolder;
 }
 
