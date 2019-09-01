@@ -1,4 +1,5 @@
 import Vue from 'vue'
+import VueAnalytics from 'vue-analytics'
 import App from './App.vue'
 import router from './router'
 
@@ -9,9 +10,11 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 library.add(faSpaceShuttle, faUserAstronaut, faRocket, faQuestionCircle, faSatellite);
 
+Vue.use(VueAnalytics, {
+  id: 'UA-146772263-1'
+})
+
 Vue.component('font-awesome-icon', FontAwesomeIcon)
-
-
 
 Vue.config.productionTip = false
 

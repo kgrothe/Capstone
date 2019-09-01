@@ -41,20 +41,13 @@
 <style scoped>
 
 .options {
-  font-size: 1.4rem; 
- /* padding-left: 30%; */
+  font-size: 1.5rem; 
   align-content: center;
   text-align: left;
- /* text-align: left;*/
- margin: auto;
- width: 35%;
-
+  margin: 0% 30% 30%;
+  width: 35%;
 }
 
-/*options.container {
-  text-align: left;
-}
-*/
 button {   
  /* border-width: .1em;
   border-color: darkslategray;  
@@ -69,7 +62,7 @@ button {
 }
 
 button:hover {
-  background-color: darkred;
+  color: darkred;
 
 }
 
