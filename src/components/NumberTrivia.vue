@@ -13,7 +13,7 @@
    
     <form v-on:submit.prevent="getTrivia">
       <p>Enter a number: <input type="number" v-model="number"> to display number fact.<br><br>
-      <button type="submit">Show me the trivia </button></p>
+      <button type="submit" aria-label="Search">Show me the trivia </button></p>
     </form>
     
   </div>

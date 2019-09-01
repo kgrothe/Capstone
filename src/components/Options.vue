@@ -2,25 +2,26 @@
 
 <div class="options">  
        
-      <button @click="$router.push('howmany')"><font-awesome-icon icon="user-astronaut" />
+      <button @click="$router.push('howmany')"><font-awesome-icon icon="user-astronaut" aria-label="Number
+      of People in Space" />
       </button>
       <router-link v-bind:to="{ name: 'howmany' }">Number of People in Space      
       </router-link>     
       <br>
       
-      <button @click="$router.push('numbertrivia')"><font-awesome-icon icon="question-circle" />
+      <button @click="$router.push('numbertrivia')" aria-labe="Number Trivia"><font-awesome-icon icon="question-circle" />
       </button>
       <router-link v-bind:to="{ name: 'numbertrivia' }">Number Trivia
       </router-link>      
       <br>
 
-      <button @click="$router.push('apod')"><font-awesome-icon icon="satellite" />
+      <button @click="$router.push('apod')" aria-label="Astronomy Picture of the Day"><font-awesome-icon icon="satellite" />
       </button>
       <router-link v-bind:to="{ name: 'apod' }">Astronomy Picture of the Day    
       </router-link>
       <br>
 
-      <button @click="$router.push('images')"><font-awesome-icon icon="rocket" />
+      <button @click="$router.push('images')"><font-awesome-icon icon="rocket" aria-label="Space Images" />
       </button>
       <router-link v-bind:to="{ name: 'images' }"> Space Images       
       </router-link>
@@ -38,7 +39,7 @@
 <style scoped>
 
 .options {
-  font-size: 1.5rem; 
+  font-size: 1.2rem; 
   color: #151B54;
   align-content: center;
   text-align: left;

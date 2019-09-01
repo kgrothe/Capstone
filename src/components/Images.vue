@@ -8,14 +8,14 @@
     
     <form v-on:submit.prevent="searchImages">
       
-      <p>Search for <input type="text" v-model="term" class="search"></p>       
+      <p>Search for <input type="text" aria-label="search term" v-model="term" class="search"></p>       
       Enter media type <select v-model="type">
           <option disabled value="">Choose one:</option>
           <option>image</option>
           <option>video</option>
           <option>audio</option>
           </select>
-          <h3>Show me: {{ term }} {{ type }}</h3>
+          <h3>Search for: {{ term }} {{ type }}</h3>
           <button type="submit"> Search </button>             
       
     </form> 
