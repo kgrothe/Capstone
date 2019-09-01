@@ -11,7 +11,8 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 library.add(faSpaceShuttle, faUserAstronaut, faRocket, faQuestionCircle, faSatellite);
 
 Vue.use(VueAnalytics, {
-  id: 'UA-146772263-1'
+  id: 'UA-146772263-1',
+  router
 })
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)
