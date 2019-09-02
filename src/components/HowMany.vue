@@ -8,7 +8,7 @@
     </p> 
   
    <form v-on:submit.prevent="findNumber">
-     <p>There are {{ results.length }} people are in space today.</p>
+     <p>There are {{ results.length }} people in space today.</p>
     <p><button type="submit">{{ results.length }}</button></p>
    </form> 
 
