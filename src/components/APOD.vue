@@ -12,7 +12,7 @@
     <form v-on:submit.prevent="getImage">
       <p><button type="submit">VIEW</button></p>
     </form> 
-
+ 
   <div class="reults"><img v-bind:src="results.url" /></div> 
   <h3> {{ results.title }} </h3>
   <h4> {{ results.copyright }} </h4>
@@ -50,8 +50,8 @@ methods :{
     })
 .catch(e => {
   this.errors.push(e)
-  })
-}
+   })
+  }
 }
 }
 

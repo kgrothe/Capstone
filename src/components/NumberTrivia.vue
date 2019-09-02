@@ -34,57 +34,24 @@ export default {
       results: "",
       number: "?"
     }
-
   },
 
 //created: function () {
  methods:{
    getTrivia:function(){
-
   
  let proxyUrl = 'https://cors-anywhere.herokuapp.com/'
  let targetUrl = 'http://numbersapi.com/' 
 
-//let targetUrl = 'http://numbersapi.com/',{
- // params: {
-  //  number:this.number,
-  //},
-   //}
-
 axios.get(proxyUrl + targetUrl + this.number)
-  //axios.get(proxyUrl + targetUrl, {
-
-    //axios.get(proxyUrl + targetUrl)
-   // params: {
-     // query:this.number,
-    // random:this.number,
- //   }
- // })
-  
+    
     .then(response => {
       this.results = response.data;
-      console.log(response.data)
-      console.log(this.number)
-          })
+      })
     .catch(error => {
       this.errors.push(error);
     });
-//}
- //}
-
-// methods: {
-  // getTrivia: function() {
-  // axios.get('http://numbersapi.com/random/trivia')
-  //.then(response => {
-  //  this.results = response.data;
-  //  console.log(response.data)
-  // })
-  //  .catch(e => {
-  //    this.errors.push(e)
-  //  })
- // }
- // }
-}
+  }
  }
 }
 </script>

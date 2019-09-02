@@ -14,22 +14,20 @@
       
       <p>Search for <input type="text" aria-label="search term" v-model="term" class="search"></p>       
       Enter media type <select v-model="type">
-          <option disabled value="">Choose one:</option>
+          <option disabled value="" aria-label="media option">Choose one:</option>
           <option>image</option>
-          <option>video</option>
-          <option>audio</option>
+          <option>video</option>          
           </select>
           <h3>Search for: {{ term }} {{ type }}</h3>
-          <button type="submit"> Search </button>             
+          <button type="submit" aria-label="submit"> Search </button>             
       
     </form> 
    
   <ul v-if="results && results.length > 0" class="results">
 
-  <!--limit display to 6 images -->
-
+    <!--limit display to 6 images -->
     <li class="grid" v-for="result in results.slice(0,6)">
-    <img v-bind:src="result.links[0].href" />      
+      <img v-bind:src="result.links[0].href" />      
     </li>
   </ul> 
 
@@ -71,15 +69,11 @@ methods :{
       }
   })
    .then(response => {
-    this.results = response.data.collection.items;
-     
-    console.log(response.data)
-    console.log(collection)
-    console.log(errors.length)
- })
+    this.results = response.data.collection.items; 
+  })
 .catch(e => {
   this.errors.push(e)
-})
+  })
 }
 }
 }
@@ -94,15 +88,8 @@ methods :{
   font-size: 1.4rem; 
 }
 
-
 .p search {
   text-transform: uppercase;
-}
-
-
-.special {
-  color: black;
-  font-size: .80;
 }
 
 img {
@@ -115,7 +102,6 @@ img {
  
 .grid.img {
   width: 20%;
-
 }
 
 h3 {
@@ -133,6 +119,5 @@ li {
 a {
   color: black;
 }
-
 
 </style>

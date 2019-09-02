@@ -61,21 +61,8 @@ export default {
     .catch(error => {
       this.errors.push(error);
     });
-}
+  }
  }
-//link number of people results to number trivia
-// methods: {
-  // getTrivia: function() {
-  // axios.get('http://numbersapi.com/random/trivia')
-  //.then(response => {
-  //  this.results = response.data;
-  //  console.log(response.data)
-  // })
-  //  .catch(e => {
-  //    this.errors.push(e)
-  //  })
- // }
- // }
 }
 
 </script>
