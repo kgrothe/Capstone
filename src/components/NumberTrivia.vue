@@ -1,19 +1,22 @@
 <template>
   <div class="numbertrivia">
-   
+
+    <span class="icon">
+      <font-awesome-icon icon="question-circle"></font-awesome-icon>
+    </span>
     <p><router-link v-bind:to="{ name:'options' }">More options</router-link>
     </p>
 
     <h3>Number Trivia</h3>
-    
+
     <span class="trivia">
       <p> {{ this.number }} </p>
       <p> {{ results }} </p>
     </span>
    
     <form v-on:submit.prevent="getTrivia">
-      <p>Enter a number: <input type="number" v-model="number"> to display number fact.<br><br>
-      <button type="submit" aria-label="Search">Show me the trivia </button></p>
+      <p>Enter a number: <input type="number" v-model="number" aria-label="number"> to display number fact.<br><br>
+     <!-- <button type="submit" aria-label="Search">Show me the trivia </button>--></p>
     </form>
     
   </div>
@@ -99,8 +102,6 @@ axios.get(proxyUrl + targetUrl + this.number)
   color: navy;
   font-weight: bolder;
 }
-
-
 
 h3 {
   margin: 40px 0 0;

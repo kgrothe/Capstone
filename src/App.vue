@@ -44,9 +44,10 @@ h1 {
 img {
   size: 80%;
 }
-/*
-li {
-  display: inline-block;  
+
+span.icon {
+  font-size: 150%;
+  color: #151B54;
 }
-*/
+
 </style>

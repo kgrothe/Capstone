@@ -1,6 +1,8 @@
 <template>
   <div class="apod">
-
+    <span class="icon">
+    <font-awesome-icon icon="satellite" class="icon"></font-awesome-icon>
+    </span>
     <p>
     <router-link v-bind:to="{ name:'options' }">More options</router-link>    
     </p> 
@@ -61,15 +63,6 @@ methods :{
 
 .apod {
   font-size: 1.4rem;
-}
-
-h4.special {
-  color: black;
-  font-size: .80;
-}
-
-span {
-  width: 
 }
 
 img {

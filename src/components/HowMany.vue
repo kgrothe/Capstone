@@ -1,12 +1,12 @@
 <template>
   <div class="howmany">
-    <p>
-      <router-link v-bind:to="{ name:'numbertrivia' }"> {{ results.number }} </router-link>
-    </p>        
+    <span class="icon">
+      <font-awesome-icon icon="user-astronaut"></font-awesome-icon>
+    </span>  
     <p>
       <router-link v-bind:to="{ name:'options' }">More options</router-link>    
     </p> 
-    
+  
    <form v-on:submit.prevent="findNumber">
      <p>There are {{ results.length }} people are in space today.</p>
     <p><button type="submit">{{ results.length }}</button></p>

@@ -1,6 +1,10 @@
 <template>
   <div class="images">
 
+    <span class="icon">
+    <font-awesome-icon icon="rocket"></font-awesome-icon>
+    </span>
+    
     <p><router-link v-bind:to="{ name: 'options' }">More options</router-link>
     </p>   
 
